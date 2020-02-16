@@ -1,15 +1,15 @@
 // Template literals / Template string
 
-// const nama = 'Eko'
-// const npm = '1519240094'
-// console.log(`Hai nama saya ${nama}, dengan npm ${npm}.`);
+const nama = 'Eko'
+const npm = '1519240094'
+console.log(`Hai nama saya ${nama}, dengan npm ${npm}.`);
 
 
-// // Embedded Expressions
-// console.log(`${ 1 + 1}`);
+// Embedded Expressions
+console.log(`${ 1 + 1}`);
 
-// const nilai = 10
-// console.log(`${ nilai % 2 == 0 ? 'Genap' : 'Ganjil'}`);
+const nilai = 10
+console.log(`${ nilai % 2 == 0 ? 'Genap' : 'Ganjil'}`);
 
 
 // latihan
@@ -88,3 +88,38 @@ const elemen4 = `<div class="mhs3">
 </div>`
 
 document.body.innerHTML = elemen4
+
+
+// Tagged Template Literals
+const namaA = 'Eko Muliyo'
+const umurA = 23
+
+
+function functionA(strings, ...values){
+    // let result = ''
+    // strings.forEach((str, index) => {
+    //     result += `${str}${values[index] || ''}`
+    // })
+    
+    // return result
+
+    // penggunaan reduce
+    return strings.reduce((result, str, index) => {
+        return `${result}${str}${values[index] || ''}`
+    })
+}
+const str = functionA`Halo, nama saya ${namaA}, dan umur saya ${umurA}`
+console.log(str);
+
+// contoh Highlight
+const namaB = 'Agung'
+const umurB = 26
+
+
+function highlight(strings, ...values){
+    return strings.reduce((result, str, index) => {
+        return `${result}${str}${values[index] ? '<span class="hl">' + values[index] + '</span>' : ''}`
+    }, '')
+}
+const strHighlight = highlight`Halo, nama saya ${namaB}, dan umur saya ${umurB}`
+document.body.innerHTML = strHighlight
