@@ -80,5 +80,46 @@ function getMhs({nama}) {
 
 console.log(getMhs(mhs));
 
+// Desctructuring fungsi yang isi nya return array
+function kalkulasi1(a, b){
+    return [a + b, a - b, a * b, a / b];
+}
+
+// const tambah = kalkulasi(1, 2)[0];
+// console.log(tambah);
+
+const [tambah, kurang, kali, bagi = "kosong"] = kalkulasi1(5, 10);
+console.log(bagi);
+
+function kalkulasi2(a, b){
+    return{
+        tambah : a + b,
+        kali : a * b,
+        kurang : a - b,
+        bagi : a / b
+    }
+}
+
+const {bagi, tambah, kurang, kali} = kalkulasi2(10, 20);
+console.log(kurang);
+
+
+// Distructuring function arguments
+const mhs1 = {
+    nama : 'Andi',
+    umur : 23,
+    email : 'andi@gmail.com',
+    nilai: {
+        uas: 90,
+        uts: 95,
+        kuis : 100
+    }
+}
+
+function cetakMhs1({nama, umur, nilai: {uas, uts, kuis}}){
+    return `Hai, nama saya ${nama} dan umur ${umur} tahun. dan nilai rata-rata saya ${(uas + uts + kuis) / 3}`;
+}
+console.log(cetakMhs1(mhs1));
+
 
 
