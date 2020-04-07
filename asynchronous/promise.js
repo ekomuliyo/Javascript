@@ -13,7 +13,10 @@ function buttonSearchPromise(){
             clearProducts();
             products.forEach(function (product){
                 displayProduct(product);
-            })
+            });
+        })
+        .catch(function (error){
+            alert(error.message);
         });
 }
 
