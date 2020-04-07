@@ -1,23 +1,54 @@
 // promise mempunyai tiga state / kondisi, 1. pending = undefined, 2. resolve = value, 3. rejected = error
 
 function buttonSearchPromise(){
-    const keyword = document.getElementById("keyword2").value;
+    // Promise biasa
+    
+    // const keyword = document.getElementById("keyword").value;
+    // const promiseProduct = getProducts(keyword);
+    // promiseProduct
+    //     .then(function (value){
+    //         return value.data.products;
+    //     })
+    //     .then(function (products){
+    //         clearProducts();
+    //         products.forEach(function (product){
+    //             displayProduct(product);
+    //         });
+    //     })
+    //     .catch(function (error){
+    //         alert(error.message);
+    //     })
+    //     .finally(function (){
+    //         console.log("selesai proses data promise"); // finally tetap dieksekusi walaupun proses promise berhasil atau gagal
+    //     });
 
-    const promiseProduct = getProducts(keyword);
+    // Promise All Method
+    const keyword1 = document.getElementById("keyword_promise1").value;
+    const keyword2 = document.getElementById("keyword_promise2").value;
+    const keyword3 = document.getElementById("keyword_promise3").value;
 
-    promiseProduct
-        .then(function (value){
-            return value.data.products;
+    const promise1 = getProducts(keyword1);
+    const promise2 = getProducts(keyword2);
+    const promise3 = getProducts(keyword3);
+
+    Promise.all([promise1, promise2, promise3])
+        .then(function (values){
+            return values.map(value => value.data.products);
         })
-        .then(function (products){
+        .then(function(values){
             clearProducts();
-            products.forEach(function (product){
-                displayProduct(product);
-            });
+            values.forEach(function (products){
+                products.forEach(function (product){
+                    displayProduct(product);
+                });
+            })
         })
         .catch(function (error){
             alert(error.message);
-        });
+        })
+        .finally(function (){
+            console.log("selesai memproses semua promise");
+        })
 }
 
 function getProductsUrl(keyword) {
