@@ -5,8 +5,16 @@ function buttonSearchPromise(){
 
     const promiseProduct = getProducts(keyword);
 
-    console.log(promiseProduct);
-
+    promiseProduct
+        .then(function (value){
+            return value.data.products;
+        })
+        .then(function (products){
+            clearProducts();
+            products.forEach(function (product){
+                displayProduct(product);
+            })
+        });
 }
 
 function getProductsUrl(keyword) {
@@ -43,7 +51,7 @@ function getProducts(keyword) {
 }
 
 function clearProducts() {
-    const productUl = document.getElementById("products");
+    const productUl = document.getElementById("product_promise");
     productUl.textContent = "";
 }
 
@@ -55,6 +63,6 @@ function displayProduct(product) {
     const productLi = document.createElement("li");
     productLi.textContent = product.name;
 
-    const productUl = document.getElementById("products");
+    const productUl = document.getElementById("product_promise");
     productUl.appendChild(productLi);
 }
