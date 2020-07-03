@@ -63,7 +63,7 @@ function showDetail(movie){
                     <li class="list-group-item">${movie.Title} (${movie.Year})</li>
                     <li class="list-group-item"><strong>Director : </strong>${movie.Director}</li>
                     <li class="list-group-item"><strong>Actors : </strong>${movie.Actors}</li>
-                    <li class="list-group-item"><strong>Writers : </strong>${movie.Writers}</li>
+                    <li class="list-group-item"><strong>Writers : </strong>${movie.Writer}</li>
                     <li class="list-group-item"><strong>Plot : </strong><br>${movie.Plot}</li>
                 </ul>
             </div>
