@@ -1,0 +1,13 @@
+<h1>ini halaman home</h1>
+
+<h2>daftar mahasiswa</h2>
+<% if (mhs.length) { %>
+    <% mhs.forEach(m => { %>
+        <ul>
+            <li><%= m.nama %> </li>
+            <li><%= m.email %> </li>
+        </ul>
+    <% }) %>
+<% } else { %> 
+    <p>Data kosong</p>
+<% } %>
