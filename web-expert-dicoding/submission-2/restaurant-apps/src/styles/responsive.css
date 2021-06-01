@@ -1,0 +1,165 @@
+/* Media Queries */
+
+/* Mobile Devices - Phones/Tablets */
+
+@media only screen and (max-width: 800px) {
+
+    /* MOBILE HEADINGS */
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    .restaurants {
+        grid-template-columns: auto;
+    }
+
+    .detail {
+        max-width: 760px;
+        padding: 16px;
+    }
+
+    .detail div {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    /* MOBILE NAVIGATION */
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        justify-content: start;
+        top: 55px;
+        background-color: #fff;
+        width: 100%;
+        height: calc(100vh - 55px);
+        transform: translate(-101%);
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .navbar li {
+        padding: 15px;
+    }
+
+    .navbar li:first-child {
+        margin-top: 50px;
+    }
+
+    .navbar li a {
+        font-size: 1rem;
+    }
+
+    .menu-toggle,
+    .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    .mobile-nav {
+        transform: translate(0%) !important;
+    }
+
+    /* SECTIONS */
+
+    .headline {
+        height: 20vh;
+    }
+
+    .restaurant-container p {
+        margin-bottom: 25px;
+    }
+
+    .restaurant-container {
+        margin-top: 20px;
+    }
+
+    .restaurant-container:nth-child(2) {
+        order: -1;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .detail {
+        max-width: 560px;
+        padding: 16px;
+    }
+
+    .detail div {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tabs li {
+        width: 100%;
+    }
+
+    .tabs li:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .tabs li a {
+        border-radius: 0;
+        opacity: 1;
+        top: 0;
+    }
+
+    .tabs li.active a::before {
+        content: "•";
+        padding-right: 5px;
+    }
+
+    .tabs_content {
+        border-radius: 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .detail {
+        max-width: 460px;
+        padding: 16px;
+    }
+
+    .detail div {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .tabs_content_container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tabs_content_container span {
+        font-size: 14px;
+    }
+
+    .tabs_content_container_reviews {
+        text-align: center;
+    }
+
+    .tabs_content_container_reviews img {
+        margin: auto;
+        float: none;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+    }
+}
