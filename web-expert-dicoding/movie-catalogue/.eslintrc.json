@@ -12,6 +12,9 @@
         "sourceType": "module"
     },
     "rules": {
+        "no-restricted-globals": "off",
+        "no-restricted-syntax": "off",
+        "no-underscore-dangle": "off",
         "no-console": 0,
         "linebreak-style": ["error", "windows"],
         "no-trailing-spaces": [2, { "skipBlankLines": true }]

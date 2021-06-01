@@ -4,11 +4,11 @@ import Detail from '../views/pages/detail';
 import Like from '../views/pages/like';
 
 const routes = {
-    '/': NowPlaying,
-    '/now-playing': NowPlaying,
-    '/upcoming': Upcoming,
-    '/detail/:id': Detail,
-    '/like': Like
-}
+  '/': NowPlaying,
+  '/now-playing': NowPlaying,
+  '/upcoming': Upcoming,
+  '/detail/:id': Detail,
+  '/like': Like,
+};
 
 export default routes;
