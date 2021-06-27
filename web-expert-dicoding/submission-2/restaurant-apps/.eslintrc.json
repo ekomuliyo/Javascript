@@ -16,6 +16,7 @@
         "no-restricted-syntax": "off",
         "no-underscore-dangle": "off",
         "no-console": 0,
+        "array-callback-return": "off",
         "linebreak-style": ["error", "windows"],
         "no-trailing-spaces": [2, { "skipBlankLines": true }]
     }

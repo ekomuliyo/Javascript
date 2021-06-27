@@ -23,6 +23,7 @@ const DetailFavorite = {
       restaurant: {
         id: restaurantIdb.id,
         name: restaurantIdb.name,
+        rating: restaurantIdb.rating,
         pictureId: restaurantIdb.pictureId,
         city: restaurantIdb.city,
         address: restaurantIdb.address,

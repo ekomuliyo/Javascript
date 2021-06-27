@@ -24,8 +24,12 @@ const CacheHelper = {
     return caches.open(CONFIG_CACHE.CACHE_NAME);
   },
   async _fetchRequest(request) {
-    const response = await fetch(request);
-
+    const response = await fetch(request, {
+      header: {
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
+    
     if (!response || response.status !== 200) {
       return response;
     }

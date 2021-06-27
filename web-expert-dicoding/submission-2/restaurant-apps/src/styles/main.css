@@ -284,6 +284,8 @@ ul {
     padding: 10px 25px;
     border-radius: 2px 2px 0 0;
     background: white;
+    width: 150px;
+    height: 45px;
     /* opacity: 0.7; */
     transition: all 0.1s ease-in-out;
 }
@@ -407,6 +409,8 @@ ul {
     width: 44px;
     height: 44px;
     margin-top: 10spx;
+    background: white;
+    border: none;
 }
 
 .menu-toggle:hover {
@@ -443,9 +447,10 @@ ul {
 
 .copyright-text a {
     color: white;
-    display: inline;
-    width: 200px;
-    height: 44px;
+    display: block;
+    width: 220px;
+    height: 45px;
+    margin:0 auto;
 }
 
 .skip-link {
